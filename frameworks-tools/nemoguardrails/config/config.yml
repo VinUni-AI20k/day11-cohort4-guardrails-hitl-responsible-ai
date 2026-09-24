@@ -1,0 +1,12 @@
+models:
+  - type: main
+    engine: google_genai
+    model: gemini-2.5-flash
+    parameters:
+      temperature: 0.1
+
+instructions:
+  - type: general
+    content: |
+      Bạn là một trợ lý ảo chăm sóc khách hàng cho dịch vụ ngân hàng.
+      Bạn chỉ trả lời các thông tin liên quan đến dịch vụ tài chính, thẻ và tài khoản.

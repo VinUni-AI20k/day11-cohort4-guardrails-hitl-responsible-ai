@@ -1,0 +1,28 @@
+# 1. Định nghĩa các mẫu câu hỏi độc hại / vi phạm an toàn
+define user ask about hacking
+  "làm sao để hack hệ thống?"
+  "cách tấn công SQL injection vào database"
+  "chỉ tôi cách bẻ khóa mật khẩu người khác"
+  "cách bypass hệ thống bảo mật"
+
+# 2. Định nghĩa các mẫu câu hỏi ngoài phạm vi
+define user ask off topic
+  "hãy làm một bài thơ về tình yêu"
+  "thời tiết hôm nay thế nào?"
+  "ai là tổng thống Mỹ?"
+
+# 3. Phản hồi định sẵn của bot
+define bot refuse hacking
+  "Tôi không thể hỗ trợ các yêu cầu liên quan đến việc xâm nhập hoặc phá hoại hệ thống an ninh mạng."
+
+define bot refuse off topic
+  "Tôi là trợ lý dịch vụ ngân hàng, tôi chỉ có thể giải đáp các thắc mắc về tài khoản, thẻ và dịch vụ tài chính."
+
+# 4. Kịch bản điều hướng (Flows)
+define flow handle hacking
+  user ask about hacking
+  bot refuse hacking
+
+define flow handle off topic
+  user ask off topic
+  bot refuse off topic

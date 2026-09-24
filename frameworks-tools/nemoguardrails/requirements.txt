@@ -1,0 +1,7 @@
+# Cần Python 3.10–3.13 (langchain 0.3 lỗi trên Python 3.14)
+#
+# Trên Mac Apple Silicon, sau khi cài xong phải build lại annoy, nếu không sẽ segfault:
+#   ANNOY_COMPILER_ARGS="-D_CRT_SECURE_NO_WARNINGS,-DANNOYLIB_MULTITHREADED_BUILD" \
+#     pip install --force-reinstall --no-deps --no-binary annoy --no-cache-dir annoy==1.17.3
+nemoguardrails==0.17.0
+langchain-google-genai==2.1.12
