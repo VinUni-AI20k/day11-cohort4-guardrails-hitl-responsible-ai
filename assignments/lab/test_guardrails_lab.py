@@ -2,6 +2,7 @@
 Bộ test tự chấm cho guardrails_lab.py.
 
 Chạy:  pytest test_guardrails_lab.py -v
+  hoặc: python3 test_guardrails_lab.py
 Các test KHÔNG gọi Gemini thật: LLM được thay bằng FakeLLM, nên không cần API key.
 """
 import pytest
@@ -237,3 +238,8 @@ class TestPipeline:
     def test_invalid_input_does_not_call_llm(self, clock, fake_llm):
         lab.process_user_input("u1", "\x00\x00\x00")
         assert fake_llm.calls == []
+
+
+if __name__ == "__main__":
+    # Cho phép chạy trực tiếp: python3 test_guardrails_lab.py
+    raise SystemExit(pytest.main([__file__, "-v"]))
